@@ -58,18 +58,21 @@
             géneroToolStripMenuItem.Name = "géneroToolStripMenuItem";
             géneroToolStripMenuItem.Size = new Size(224, 26);
             géneroToolStripMenuItem.Text = "Género";
+            géneroToolStripMenuItem.Click += géneroToolStripMenuItem_Click;
             // 
             // clasificaciónToolStripMenuItem
             // 
             clasificaciónToolStripMenuItem.Name = "clasificaciónToolStripMenuItem";
             clasificaciónToolStripMenuItem.Size = new Size(224, 26);
             clasificaciónToolStripMenuItem.Text = "Clasificación";
+            clasificaciónToolStripMenuItem.Click += clasificaciónToolStripMenuItem_Click;
             // 
             // películaToolStripMenuItem
             // 
             películaToolStripMenuItem.Name = "películaToolStripMenuItem";
             películaToolStripMenuItem.Size = new Size(224, 26);
             películaToolStripMenuItem.Text = "Película";
+            películaToolStripMenuItem.Click += películaToolStripMenuItem_Click;
             // 
             // VentanaPrincipal
             // 
