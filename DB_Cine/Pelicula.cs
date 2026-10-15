@@ -226,11 +226,13 @@ namespace DB_Cine
             {
                 try
                 {
-                    using (SqlConnection conn = new Conexion().ObtenerConexion()) { 
+                    using (SqlConnection conn = new Conexion().ObtenerConexion())
+                    {
                         conn.Open();
                         string query = "INSERT INTO Pelicula(NombrePelicula, Duracion, IDGenero, IDClasificacion) " +
                             "VALUES (@NombrePelicula, @Duracion, @IDGenero, @IDClasificacion)";
-                        using (SqlCommand cmd = new SqlCommand(query, conn)) { 
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
                             cmd.Parameters.AddWithValue("@NombrePelicula", txtNombrePelicula.Text);
                             cmd.Parameters.AddWithValue("@Duracion", txtDuracion.Text);
                             cmd.Parameters.AddWithValue("@IDGenero", cbGenero.SelectedValue);
@@ -299,6 +301,16 @@ namespace DB_Cine
                     obtenerDatos();
                 }
             }//close edit record
+        }
+
+        private void Pelicula_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIDPelicula_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

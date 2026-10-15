@@ -24,5 +24,10 @@ namespace DB_Cine
             Pelicula pelicula = new Pelicula();
             pelicula.ShowDialog();
         }
+
+        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
