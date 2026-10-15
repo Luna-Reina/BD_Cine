@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Ignorar la configuración local de la base de datos
+DB_Cine/App.config
+
 # User-specific files
 *.rsuser
 *.suo
