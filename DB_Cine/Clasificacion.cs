@@ -16,5 +16,10 @@ namespace DB_Cine
         {
             InitializeComponent();
         }
+
+        private void Clasificacion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
