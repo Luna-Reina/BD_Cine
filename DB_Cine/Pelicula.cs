@@ -312,5 +312,10 @@ namespace DB_Cine
         {
 
         }
+
+        private void cbClasificacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

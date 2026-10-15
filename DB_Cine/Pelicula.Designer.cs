@@ -61,7 +61,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnNuevo, btnEditar, btnEliminar, btnCancelar, btnGuardar, btnObtenerDatos, btnSalir });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(778, 27);
+            toolStrip1.Size = new Size(738, 27);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -151,7 +151,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvPeliculas.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvPeliculas.Location = new Point(17, 42);
+            dgvPeliculas.Location = new Point(17, 39);
             dgvPeliculas.Margin = new Padding(3, 2, 3, 2);
             dgvPeliculas.Name = "dgvPeliculas";
             dgvPeliculas.ReadOnly = true;
@@ -164,7 +164,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dgvPeliculas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvPeliculas.RowHeadersWidth = 51;
-            dgvPeliculas.Size = new Size(737, 249);
+            dgvPeliculas.Size = new Size(693, 252);
             dgvPeliculas.TabIndex = 1;
             dgvPeliculas.SelectionChanged += dgvPeliculas_SelectionChanged;
             // 
@@ -211,11 +211,12 @@
             // 
             cbClasificacion.Enabled = false;
             cbClasificacion.FormattingEnabled = true;
-            cbClasificacion.Location = new Point(577, 354);
+            cbClasificacion.Location = new Point(577, 356);
             cbClasificacion.Margin = new Padding(3, 2, 3, 2);
             cbClasificacion.Name = "cbClasificacion";
             cbClasificacion.Size = new Size(133, 23);
             cbClasificacion.TabIndex = 6;
+            cbClasificacion.SelectedIndexChanged += cbClasificacion_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -266,7 +267,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(778, 414);
+            ClientSize = new Size(738, 414);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);

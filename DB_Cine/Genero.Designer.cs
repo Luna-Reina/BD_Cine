@@ -33,17 +33,12 @@ namespace DB_Cine
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Genero));
-            label5 = new Label();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            cbClasificacion = new ComboBox();
-            cbGenero = new ComboBox();
-            txtDuracion = new TextBox();
-            txtNombrePelicula = new TextBox();
-            txtIDPelicula = new TextBox();
-            dgvPeliculas = new DataGridView();
+            txtDescripcion = new TextBox();
+            txtIDGenero = new TextBox();
+            dgvGenero = new DataGridView();
             toolStrip1 = new ToolStrip();
             btnNuevo = new ToolStripButton();
             btnEditar = new ToolStripButton();
@@ -52,106 +47,60 @@ namespace DB_Cine
             btnGuardar = new ToolStripButton();
             btnObtenerDatos = new ToolStripButton();
             btnSalir = new ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)dgvPeliculas).BeginInit();
+            cbGenero = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvGenero).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(479, 379);
-            label5.Name = "label5";
-            label5.Size = new Size(74, 15);
-            label5.TabIndex = 23;
-            label5.Text = "Clasificación";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(249, 379);
-            label4.Name = "label4";
-            label4.Size = new Size(45, 15);
-            label4.TabIndex = 22;
-            label4.Text = "Género";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(249, 340);
+            label3.Location = new Point(259, 343);
             label3.Name = "label3";
-            label3.Size = new Size(55, 15);
+            label3.Size = new Size(69, 15);
             label3.TabIndex = 21;
-            label3.Text = "Duración";
+            label3.Text = "Descripción";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(8, 382);
+            label2.Location = new Point(17, 382);
             label2.Name = "label2";
-            label2.Size = new Size(51, 15);
+            label2.Size = new Size(45, 15);
             label2.TabIndex = 20;
-            label2.Text = "Nombre";
+            label2.Text = "Género";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(8, 343);
+            label1.Location = new Point(17, 343);
             label1.Name = "label1";
-            label1.Size = new Size(62, 15);
+            label1.Size = new Size(59, 15);
             label1.TabIndex = 19;
-            label1.Text = "ID Película";
+            label1.Text = "ID Género";
             // 
-            // cbClasificacion
+            // txtDescripcion
             // 
-            cbClasificacion.Enabled = false;
-            cbClasificacion.FormattingEnabled = true;
-            cbClasificacion.Location = new Point(568, 374);
-            cbClasificacion.Margin = new Padding(3, 2, 3, 2);
-            cbClasificacion.Name = "cbClasificacion";
-            cbClasificacion.Size = new Size(133, 23);
-            cbClasificacion.TabIndex = 18;
+            txtDescripcion.Enabled = false;
+            txtDescripcion.Location = new Point(334, 339);
+            txtDescripcion.Margin = new Padding(3, 2, 3, 2);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(133, 23);
+            txtDescripcion.TabIndex = 16;
             // 
-            // cbGenero
+            // txtIDGenero
             // 
-            cbGenero.Enabled = false;
-            cbGenero.FormattingEnabled = true;
-            cbGenero.Location = new Point(321, 379);
-            cbGenero.Margin = new Padding(3, 2, 3, 2);
-            cbGenero.Name = "cbGenero";
-            cbGenero.Size = new Size(133, 23);
-            cbGenero.TabIndex = 17;
+            txtIDGenero.Location = new Point(101, 339);
+            txtIDGenero.Margin = new Padding(3, 2, 3, 2);
+            txtIDGenero.Name = "txtIDGenero";
+            txtIDGenero.ReadOnly = true;
+            txtIDGenero.Size = new Size(133, 23);
+            txtIDGenero.TabIndex = 14;
             // 
-            // txtDuracion
+            // dgvGenero
             // 
-            txtDuracion.Enabled = false;
-            txtDuracion.Location = new Point(321, 340);
-            txtDuracion.Margin = new Padding(3, 2, 3, 2);
-            txtDuracion.Name = "txtDuracion";
-            txtDuracion.Size = new Size(133, 23);
-            txtDuracion.TabIndex = 16;
-            // 
-            // txtNombrePelicula
-            // 
-            txtNombrePelicula.Enabled = false;
-            txtNombrePelicula.Location = new Point(92, 379);
-            txtNombrePelicula.Margin = new Padding(3, 2, 3, 2);
-            txtNombrePelicula.Name = "txtNombrePelicula";
-            txtNombrePelicula.Size = new Size(133, 23);
-            txtNombrePelicula.TabIndex = 15;
-            // 
-            // txtIDPelicula
-            // 
-            txtIDPelicula.Location = new Point(92, 339);
-            txtIDPelicula.Margin = new Padding(3, 2, 3, 2);
-            txtIDPelicula.Name = "txtIDPelicula";
-            txtIDPelicula.ReadOnly = true;
-            txtIDPelicula.Size = new Size(133, 23);
-            txtIDPelicula.TabIndex = 14;
-            // 
-            // dgvPeliculas
-            // 
-            dgvPeliculas.AllowUserToAddRows = false;
-            dgvPeliculas.AllowUserToDeleteRows = false;
+            dgvGenero.AllowUserToAddRows = false;
+            dgvGenero.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
@@ -159,8 +108,8 @@ namespace DB_Cine
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvPeliculas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvPeliculas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGenero.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvGenero.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -168,11 +117,11 @@ namespace DB_Cine
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvPeliculas.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvPeliculas.Location = new Point(12, 62);
-            dgvPeliculas.Margin = new Padding(3, 2, 3, 2);
-            dgvPeliculas.Name = "dgvPeliculas";
-            dgvPeliculas.ReadOnly = true;
+            dgvGenero.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvGenero.Location = new Point(17, 42);
+            dgvGenero.Margin = new Padding(3, 2, 3, 2);
+            dgvGenero.Name = "dgvGenero";
+            dgvGenero.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -180,10 +129,10 @@ namespace DB_Cine
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvPeliculas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvPeliculas.RowHeadersWidth = 51;
-            dgvPeliculas.Size = new Size(733, 249);
-            dgvPeliculas.TabIndex = 13;
+            dgvGenero.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvGenero.RowHeadersWidth = 51;
+            dgvGenero.Size = new Size(693, 281);
+            dgvGenero.TabIndex = 13;
             // 
             // toolStrip1
             // 
@@ -191,9 +140,10 @@ namespace DB_Cine
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnNuevo, btnEditar, btnEliminar, btnCancelar, btnGuardar, btnObtenerDatos, btnSalir });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(765, 27);
+            toolStrip1.Size = new Size(729, 27);
             toolStrip1.TabIndex = 12;
             toolStrip1.Text = "toolStrip1";
+            toolStrip1.ItemClicked += toolStrip1_ItemClicked;
             // 
             // btnNuevo
             // 
@@ -254,27 +204,33 @@ namespace DB_Cine
             btnSalir.Size = new Size(53, 24);
             btnSalir.Text = "Salir";
             // 
+            // cbGenero
+            // 
+            cbGenero.Enabled = false;
+            cbGenero.FormattingEnabled = true;
+            cbGenero.Location = new Point(101, 382);
+            cbGenero.Margin = new Padding(3, 2, 3, 2);
+            cbGenero.Name = "cbGenero";
+            cbGenero.Size = new Size(133, 23);
+            cbGenero.TabIndex = 17;
+            // 
             // Genero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(765, 423);
-            Controls.Add(label5);
-            Controls.Add(label4);
+            ClientSize = new Size(729, 423);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(cbClasificacion);
             Controls.Add(cbGenero);
-            Controls.Add(txtDuracion);
-            Controls.Add(txtNombrePelicula);
-            Controls.Add(txtIDPelicula);
-            Controls.Add(dgvPeliculas);
+            Controls.Add(txtDescripcion);
+            Controls.Add(txtIDGenero);
+            Controls.Add(dgvGenero);
             Controls.Add(toolStrip1);
             Name = "Genero";
             Text = "Genero";
             Load += Genero_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvPeliculas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGenero).EndInit();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ResumeLayout(false);
@@ -282,18 +238,12 @@ namespace DB_Cine
         }
 
         #endregion
-
-        private Label label5;
-        private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private ComboBox cbClasificacion;
-        private ComboBox cbGenero;
-        private TextBox txtDuracion;
-        private TextBox txtNombrePelicula;
-        private TextBox txtIDPelicula;
-        private DataGridView dgvPeliculas;
+        private TextBox txtDescripcion;
+        private TextBox txtIDGenero;
+        private DataGridView dgvGenero;
         private ToolStrip toolStrip1;
         private ToolStripButton btnNuevo;
         private ToolStripButton btnEditar;
@@ -302,5 +252,6 @@ namespace DB_Cine
         private ToolStripButton btnGuardar;
         private ToolStripButton btnObtenerDatos;
         private ToolStripButton btnSalir;
+        private ComboBox cbGenero;
     }
 }
