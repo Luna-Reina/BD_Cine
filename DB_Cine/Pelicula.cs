@@ -206,7 +206,7 @@ namespace DB_Cine
 
         private void dgvPeliculas_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvPeliculas.SelectedRows.Count >0 )
+            if (dgvPeliculas.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvPeliculas.SelectedRows[0];
 
@@ -217,6 +217,88 @@ namespace DB_Cine
                 cbClasificacion.Text = row.Cells["Clasificación"].Value?.ToString();
             }
 
+        }
+
+        //method to save or update the record in the database
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (!this.editar)
+            {
+                try
+                {
+                    using (SqlConnection conn = new Conexion().ObtenerConexion()) { 
+                        conn.Open();
+                        string query = "INSERT INTO Pelicula(NombrePelicula, Duracion, IDGenero, IDClasificacion) " +
+                            "VALUES (@NombrePelicula, @Duracion, @IDGenero, @IDClasificacion)";
+                        using (SqlCommand cmd = new SqlCommand(query, conn)) { 
+                            cmd.Parameters.AddWithValue("@NombrePelicula", txtNombrePelicula.Text);
+                            cmd.Parameters.AddWithValue("@Duracion", txtDuracion.Text);
+                            cmd.Parameters.AddWithValue("@IDGenero", cbGenero.SelectedValue);
+                            cmd.Parameters.AddWithValue("@IDClasificacion", cbClasificacion.SelectedValue);
+                            int renglonesAfectados = cmd.ExecuteNonQuery();
+                            if (renglonesAfectados > 0)
+                            {
+                                MessageBox.Show("Registro guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo guardar el registro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar los datos: " +
+                        ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    reestablecerBotones();
+                    Limpiar();
+                    obtenerDatos();
+                }
+            }//close new record
+            if (this.editar)
+            {
+                try
+                {
+                    using (SqlConnection conn = new Conexion().ObtenerConexion())
+                    {
+                        conn.Open();
+                        string query = "UPDATE Pelicula SET NombrePelicula = @NombrePelicula, Duracion = @Duracion, " +
+                            "IDGenero = @IDGenero, IDClasificacion = @IDClasificacion WHERE IDPelicula = @IDPelicula";
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@NombrePelicula", txtNombrePelicula.Text);
+                            cmd.Parameters.AddWithValue("@Duracion", txtDuracion.Text);
+                            cmd.Parameters.AddWithValue("@IDGenero", cbGenero.SelectedValue);
+                            cmd.Parameters.AddWithValue("@IDClasificacion", cbClasificacion.SelectedValue);
+                            cmd.Parameters.AddWithValue("@IDPelicula", txtIDPelicula.Text);
+                            int renglonesAfectados = cmd.ExecuteNonQuery();
+                            if (renglonesAfectados > 0)
+                            {
+                                MessageBox.Show("Registro actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo actualizar el registro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar los datos: " +
+                        ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    reestablecerBotones();
+                    Limpiar();
+                    obtenerDatos();
+                }
+            }//close edit record
         }
     }
 }

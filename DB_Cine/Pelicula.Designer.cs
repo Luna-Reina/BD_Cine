@@ -109,6 +109,7 @@
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(86, 24);
             btnGuardar.Text = "Guardar";
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnObtenerDatos
             // 
