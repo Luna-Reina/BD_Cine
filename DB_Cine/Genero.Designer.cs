@@ -47,7 +47,7 @@ namespace DB_Cine
             btnGuardar = new ToolStripButton();
             btnObtenerDatos = new ToolStripButton();
             btnSalir = new ToolStripButton();
-            cbGenero = new ComboBox();
+            txtNombreGenero = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvGenero).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -133,6 +133,7 @@ namespace DB_Cine
             dgvGenero.RowHeadersWidth = 51;
             dgvGenero.Size = new Size(693, 281);
             dgvGenero.TabIndex = 13;
+            dgvGenero.CellContentClick += dgvGenero_CellContentClick;
             // 
             // toolStrip1
             // 
@@ -152,6 +153,7 @@ namespace DB_Cine
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(66, 24);
             btnNuevo.Text = "Nuevo";
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnEditar
             // 
@@ -160,6 +162,7 @@ namespace DB_Cine
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(61, 24);
             btnEditar.Text = "Editar";
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -177,6 +180,7 @@ namespace DB_Cine
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(77, 24);
             btnCancelar.Text = "Cancelar";
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnGuardar
             // 
@@ -186,6 +190,7 @@ namespace DB_Cine
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(73, 24);
             btnGuardar.Text = "Guardar";
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnObtenerDatos
             // 
@@ -194,6 +199,7 @@ namespace DB_Cine
             btnObtenerDatos.Name = "btnObtenerDatos";
             btnObtenerDatos.Size = new Size(107, 24);
             btnObtenerDatos.Text = "Obtener Datos";
+            btnObtenerDatos.Click += btnObtenerDatos_Click;
             // 
             // btnSalir
             // 
@@ -203,26 +209,26 @@ namespace DB_Cine
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(53, 24);
             btnSalir.Text = "Salir";
+            btnSalir.Click += btnSalir_Click;
             // 
-            // cbGenero
+            // txtNombreGenero
             // 
-            cbGenero.Enabled = false;
-            cbGenero.FormattingEnabled = true;
-            cbGenero.Location = new Point(101, 382);
-            cbGenero.Margin = new Padding(3, 2, 3, 2);
-            cbGenero.Name = "cbGenero";
-            cbGenero.Size = new Size(133, 23);
-            cbGenero.TabIndex = 17;
+            txtNombreGenero.Enabled = false;
+            txtNombreGenero.Location = new Point(101, 382);
+            txtNombreGenero.Margin = new Padding(3, 2, 3, 2);
+            txtNombreGenero.Name = "txtNombreGenero";
+            txtNombreGenero.Size = new Size(133, 23);
+            txtNombreGenero.TabIndex = 22;
             // 
             // Genero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(729, 423);
+            Controls.Add(txtNombreGenero);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(cbGenero);
             Controls.Add(txtDescripcion);
             Controls.Add(txtIDGenero);
             Controls.Add(dgvGenero);
@@ -252,6 +258,6 @@ namespace DB_Cine
         private ToolStripButton btnGuardar;
         private ToolStripButton btnObtenerDatos;
         private ToolStripButton btnSalir;
-        private ComboBox cbGenero;
+        private TextBox txtNombreGenero;
     }
 }
