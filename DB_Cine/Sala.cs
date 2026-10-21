@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,10 +60,12 @@ namespace DB_Cine
         {
             try
             {
+                dgvSala.SelectionChanged -= dgvSala_SelectionChanged;
                 using (SqlConnection conn = new Conexion().ObtenerConexion())
                 {
                     conn.Open();
                     String query = @"SELECT S.IDSala
+                                      ,S.IDSucursal AS IDSucursal
                                       ,SU.Nombre AS NombreSucursal
                                       ,S.NumeroSala
                                       ,S.TipoSala
@@ -78,6 +81,10 @@ namespace DB_Cine
                         }
                         dgvSala.DataSource = dt;
 
+                        if (dgvSala.Columns["IDSucursal"] != null)
+                        {
+                            dgvSala.Columns["IDSucursal"].Visible = false;
+                        }
                     }
 
                 }
@@ -85,6 +92,10 @@ namespace DB_Cine
             catch (Exception ex)
             {
                 MessageBox.Show("Error al conectarse: " + ex.Message);
+            }
+            finally
+            {
+                dgvSala.SelectionChanged += dgvSala_SelectionChanged;
             }
         }
 
@@ -129,6 +140,144 @@ namespace DB_Cine
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            this.editar = true;
+            habilitarEscribir();
+            MessageBox.Show("Estás en el modo de edición", "Notificación", MessageBoxButtons.OK);
+        }
+
+        private void dgvSala_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvSala.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dgvSala.SelectedRows[0];
+
+                txtIdSala.Text = row.Cells["IDSala"].Value.ToString();
+                cmbSucursal.SelectedValue = row.Cells["IDSucursal"].Value;
+                txtNumeroSala.Text = row.Cells["NumeroSala"].Value.ToString();
+                txtTipoSala.Text = row.Cells["TipoSala"].Value.ToString();
+                txtAsientos.Text = row.Cells["CantidadAsientos"].Value.ToString();
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea cancelar operación?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                MessageBox.Show("Se detuvo la cancelación", "Mensaje", MessageBoxButtons.OK);
+                return;
+            }
+
+            limpiar();
+            reestablecerBotones();
+            MessageBox.Show("Operación cancelada", "Cancelación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new Conexion().ObtenerConexion())
+                {
+                    conn.Open();
+                    string query = "";
+                    if (!this.editar) //Nuevo Resgistro
+                    {
+                        query = @"INSERT INTO dbo.Sala
+                                       (IDSucursal
+                                       ,NumeroSala
+                                       ,TipoSala
+                                       ,CantidadAsientos)
+                                 VALUES
+                                       (@IDSucursal
+                                       ,@NumeroSala
+                                       ,@TipoSala
+                                       ,@CantidadAsientos)";
+                    }
+                    else
+                    {  //Update
+                        query = @"UPDATE dbo.Sala
+                                   SET IDSucursal = @IDSucursal
+                                      ,NumeroSala = @NumeroSala
+                                      ,TipoSala = @TipoSala
+                                      ,CantidadAsientos = @CantidadAsientos
+                                 WHERE IDSala= @IDSala";
+                    }
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@IDSucursal", cmbSucursal.SelectedValue);
+                        cmd.Parameters.AddWithValue("@NumeroSala", txtNumeroSala.Text);
+                        cmd.Parameters.AddWithValue("@TipoSala", txtTipoSala.Text);
+                        cmd.Parameters.AddWithValue("@CantidadAsientos", Convert.ToInt32(txtAsientos.Text));
+                        if (this.editar)
+                        {
+                            cmd.Parameters.AddWithValue("@IDSala", Convert.ToInt32(txtIdSala.Text));
+                        }
+                        int renglonesAfectados = cmd.ExecuteNonQuery();
+                        if (renglonesAfectados > 0)
+                        {
+                            MessageBox.Show("Consulta realizada con éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al realizar ejecución: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                obtenerDatos();
+                reestablecerBotones();
+                limpiar();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea eliminar este registro?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                MessageBox.Show("Se canceló la eliminación");
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new Conexion().ObtenerConexion())
+                {
+                    conn.Open();
+                    string query = @"DELETE FROM dbo.Sala WHERE IDSala = @IDSala";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@IDSala", Convert.ToInt32(txtIdSala.Text));
+
+                        int renglonesAfectados = cmd.ExecuteNonQuery();
+                        if (renglonesAfectados > 0)
+                        {
+                            MessageBox.Show("Consulta realizada con éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al realizar consulta: " + ex.Message);
+            }
+            finally
+            {
+                obtenerDatos();
+                limpiar();
+                reestablecerBotones();
+            }
+
+        }
+
+        private void btnObtenerDatos_Click(object sender, EventArgs e)
+        {
+            obtenerDatos();
         }
     }
 }

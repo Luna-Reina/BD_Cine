@@ -78,6 +78,7 @@
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(61, 24);
             btnEditar.Text = "Editar";
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -86,6 +87,7 @@
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(74, 24);
             btnEliminar.Text = "Eliminar";
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCancelar
             // 
@@ -95,6 +97,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(77, 24);
             btnCancelar.Text = "Cancelar";
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnGuardar
             // 
@@ -104,6 +107,7 @@
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(73, 24);
             btnGuardar.Text = "Guardar";
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnObtenerDatos
             // 
@@ -112,6 +116,7 @@
             btnObtenerDatos.Name = "btnObtenerDatos";
             btnObtenerDatos.Size = new Size(107, 24);
             btnObtenerDatos.Text = "Obtener Datos";
+            btnObtenerDatos.Click += btnObtenerDatos_Click;
             // 
             // btnSalir
             // 
@@ -133,6 +138,7 @@
             dgvSala.ReadOnly = true;
             dgvSala.Size = new Size(785, 227);
             dgvSala.TabIndex = 2;
+            dgvSala.SelectionChanged += dgvSala_SelectionChanged;
             // 
             // txtTipoSala
             // 
