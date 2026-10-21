@@ -186,7 +186,6 @@
             txtNombrePelicula.Name = "txtNombrePelicula";
             txtNombrePelicula.Size = new Size(133, 23);
             txtNombrePelicula.TabIndex = 3;
-            txtNombrePelicula.TextChanged += this.txtNombrePelicula_TextChanged;
             // 
             // txtDuracion
             // 

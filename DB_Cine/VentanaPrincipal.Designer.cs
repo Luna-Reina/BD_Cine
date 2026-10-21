@@ -33,6 +33,7 @@
             géneroToolStripMenuItem = new ToolStripMenuItem();
             clasificaciónToolStripMenuItem = new ToolStripMenuItem();
             películaToolStripMenuItem = new ToolStripMenuItem();
+            ciudadTrabajoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,47 +43,53 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { catalogoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(744, 24);
+            menuStrip1.Padding = new Padding(6, 3, 0, 3);
+            menuStrip1.Size = new Size(850, 30);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // catalogoToolStripMenuItem
             // 
-            catalogoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { géneroToolStripMenuItem, clasificaciónToolStripMenuItem, películaToolStripMenuItem });
+            catalogoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { géneroToolStripMenuItem, clasificaciónToolStripMenuItem, películaToolStripMenuItem, ciudadTrabajoToolStripMenuItem });
             catalogoToolStripMenuItem.Name = "catalogoToolStripMenuItem";
-            catalogoToolStripMenuItem.Size = new Size(67, 20);
+            catalogoToolStripMenuItem.Size = new Size(84, 24);
             catalogoToolStripMenuItem.Text = "Catalogo";
             // 
             // géneroToolStripMenuItem
             // 
             géneroToolStripMenuItem.Name = "géneroToolStripMenuItem";
-            géneroToolStripMenuItem.Size = new Size(141, 22);
+            géneroToolStripMenuItem.Size = new Size(224, 26);
             géneroToolStripMenuItem.Text = "Género";
             géneroToolStripMenuItem.Click += géneroToolStripMenuItem_Click;
             // 
             // clasificaciónToolStripMenuItem
             // 
             clasificaciónToolStripMenuItem.Name = "clasificaciónToolStripMenuItem";
-            clasificaciónToolStripMenuItem.Size = new Size(141, 22);
+            clasificaciónToolStripMenuItem.Size = new Size(224, 26);
             clasificaciónToolStripMenuItem.Text = "Clasificación";
             clasificaciónToolStripMenuItem.Click += clasificaciónToolStripMenuItem_Click;
             // 
             // películaToolStripMenuItem
             // 
             películaToolStripMenuItem.Name = "películaToolStripMenuItem";
-            películaToolStripMenuItem.Size = new Size(141, 22);
+            películaToolStripMenuItem.Size = new Size(224, 26);
             películaToolStripMenuItem.Text = "Película";
             películaToolStripMenuItem.Click += películaToolStripMenuItem_Click;
             // 
+            // ciudadTrabajoToolStripMenuItem
+            // 
+            ciudadTrabajoToolStripMenuItem.Name = "ciudadTrabajoToolStripMenuItem";
+            ciudadTrabajoToolStripMenuItem.Size = new Size(224, 26);
+            ciudadTrabajoToolStripMenuItem.Text = "Ciudad-Estado";
+            ciudadTrabajoToolStripMenuItem.Click += ciudadEstadoToolStripMenuItem_Click;
+            // 
             // VentanaPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 383);
+            ClientSize = new Size(850, 511);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "VentanaPrincipal";
             Text = "Ventana Principal";
             Load += VentanaPrincipal_Load;
@@ -99,5 +106,6 @@
         private ToolStripMenuItem géneroToolStripMenuItem;
         private ToolStripMenuItem clasificaciónToolStripMenuItem;
         private ToolStripMenuItem películaToolStripMenuItem;
+        private ToolStripMenuItem ciudadTrabajoToolStripMenuItem;
     }
 }
