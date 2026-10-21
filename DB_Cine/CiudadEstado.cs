@@ -206,11 +206,13 @@ namespace DB_Cine
             if (MessageBox.Show("¿Desea editar \"Ciudad\"?", "¿Ciudad?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 habilitarCiudad();
+                this.editar = true;
                 return;
             }
             if (MessageBox.Show("¿Desea editar \"Estado\"?", "¿Estado?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 habilitarEstado();
+                this.editar = true;
                 return;
             }
             MessageBox.Show("Debe de elegir editar ciudad o estado", "Cancelación", MessageBoxButtons.OK);

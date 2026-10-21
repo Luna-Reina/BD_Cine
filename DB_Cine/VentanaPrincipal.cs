@@ -35,5 +35,11 @@ namespace DB_Cine
             CiudadEstado ciudadestado = new CiudadEstado();
             ciudadestado.ShowDialog();
         }
+
+        private void salaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sala sala = new Sala();
+            sala.ShowDialog();
+        }
     }
 }
