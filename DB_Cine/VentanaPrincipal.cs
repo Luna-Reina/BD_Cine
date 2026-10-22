@@ -29,5 +29,23 @@ namespace DB_Cine
         {
 
         }
+
+        private void ciudadEstadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CiudadEstado ciudadestado = new CiudadEstado();
+            ciudadestado.ShowDialog();
+        }
+
+        private void salaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sala sala = new Sala();
+            sala.ShowDialog();
+        }
+
+        private void detalleVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Venta venta = new Venta();
+            venta.ShowDialog();
+        }
     }
 }
