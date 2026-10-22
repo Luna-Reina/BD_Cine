@@ -7,16 +7,16 @@ namespace DB_Cine
             InitializeComponent();
         }
 
-        private void géneroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Genero genero = new Genero();
-            genero.ShowDialog();
-        }
-
         private void clasificaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Clasificacion clasificacion = new Clasificacion();
             clasificacion.ShowDialog();
+        }
+
+        private void géneroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Genero genero = new Genero();
+            genero.ShowDialog();
         }
 
         private void películaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -25,7 +25,18 @@ namespace DB_Cine
             pelicula.ShowDialog();
         }
 
-        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        private void sucursalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sala sala = new Sala();
+            sala.ShowDialog();
+        }
+
+        private void tipoBoletoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -36,10 +47,19 @@ namespace DB_Cine
             ciudadestado.ShowDialog();
         }
 
-        private void salaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Sala sala = new Sala();
-            sala.ShowDialog();
+
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ventaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void detalleVentaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,5 +67,11 @@ namespace DB_Cine
             Venta venta = new Venta();
             venta.ShowDialog();
         }
-    }
-}
+
+        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+    }//Close Class
+}//Close Namespace

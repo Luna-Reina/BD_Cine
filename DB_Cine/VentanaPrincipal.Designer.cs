@@ -30,11 +30,16 @@
         {
             menuStrip1 = new MenuStrip();
             catalogoToolStripMenuItem = new ToolStripMenuItem();
-            géneroToolStripMenuItem = new ToolStripMenuItem();
             clasificaciónToolStripMenuItem = new ToolStripMenuItem();
+            géneroToolStripMenuItem = new ToolStripMenuItem();
             películaToolStripMenuItem = new ToolStripMenuItem();
-            ciudadTrabajoToolStripMenuItem = new ToolStripMenuItem();
+            sucursalToolStripMenuItem = new ToolStripMenuItem();
             salaToolStripMenuItem = new ToolStripMenuItem();
+            tipoBoletoToolStripMenuItem = new ToolStripMenuItem();
+            ciudadTrabajoToolStripMenuItem = new ToolStripMenuItem();
+            funciónToolStripMenuItem = new ToolStripMenuItem();
+            clienteToolStripMenuItem = new ToolStripMenuItem();
+            ventaToolStripMenuItem1 = new ToolStripMenuItem();
             ventaToolStripMenuItem = new ToolStripMenuItem();
             detalleVentaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
@@ -53,17 +58,10 @@
             // 
             // catalogoToolStripMenuItem
             // 
-            catalogoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { géneroToolStripMenuItem, clasificaciónToolStripMenuItem, películaToolStripMenuItem, ciudadTrabajoToolStripMenuItem, salaToolStripMenuItem });
+            catalogoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clasificaciónToolStripMenuItem, géneroToolStripMenuItem, películaToolStripMenuItem, sucursalToolStripMenuItem, salaToolStripMenuItem, tipoBoletoToolStripMenuItem, ciudadTrabajoToolStripMenuItem, funciónToolStripMenuItem, clienteToolStripMenuItem, ventaToolStripMenuItem1 });
             catalogoToolStripMenuItem.Name = "catalogoToolStripMenuItem";
             catalogoToolStripMenuItem.Size = new Size(67, 20);
             catalogoToolStripMenuItem.Text = "Catalogo";
-            // 
-            // géneroToolStripMenuItem
-            // 
-            géneroToolStripMenuItem.Name = "géneroToolStripMenuItem";
-            géneroToolStripMenuItem.Size = new Size(180, 22);
-            géneroToolStripMenuItem.Text = "Género";
-            géneroToolStripMenuItem.Click += géneroToolStripMenuItem_Click;
             // 
             // clasificaciónToolStripMenuItem
             // 
@@ -72,12 +70,40 @@
             clasificaciónToolStripMenuItem.Text = "Clasificación";
             clasificaciónToolStripMenuItem.Click += clasificaciónToolStripMenuItem_Click;
             // 
+            // géneroToolStripMenuItem
+            // 
+            géneroToolStripMenuItem.Name = "géneroToolStripMenuItem";
+            géneroToolStripMenuItem.Size = new Size(180, 22);
+            géneroToolStripMenuItem.Text = "Género";
+            géneroToolStripMenuItem.Click += géneroToolStripMenuItem_Click;
+            // 
             // películaToolStripMenuItem
             // 
             películaToolStripMenuItem.Name = "películaToolStripMenuItem";
             películaToolStripMenuItem.Size = new Size(180, 22);
             películaToolStripMenuItem.Text = "Película";
             películaToolStripMenuItem.Click += películaToolStripMenuItem_Click;
+            // 
+            // sucursalToolStripMenuItem
+            // 
+            sucursalToolStripMenuItem.Name = "sucursalToolStripMenuItem";
+            sucursalToolStripMenuItem.Size = new Size(180, 22);
+            sucursalToolStripMenuItem.Text = "Sucursal";
+            sucursalToolStripMenuItem.Click += sucursalToolStripMenuItem_Click;
+            // 
+            // salaToolStripMenuItem
+            // 
+            salaToolStripMenuItem.Name = "salaToolStripMenuItem";
+            salaToolStripMenuItem.Size = new Size(180, 22);
+            salaToolStripMenuItem.Text = "Sala";
+            salaToolStripMenuItem.Click += salaToolStripMenuItem_Click;
+            // 
+            // tipoBoletoToolStripMenuItem
+            // 
+            tipoBoletoToolStripMenuItem.Name = "tipoBoletoToolStripMenuItem";
+            tipoBoletoToolStripMenuItem.Size = new Size(180, 22);
+            tipoBoletoToolStripMenuItem.Text = "Tipo Boleto";
+            tipoBoletoToolStripMenuItem.Click += tipoBoletoToolStripMenuItem_Click;
             // 
             // ciudadTrabajoToolStripMenuItem
             // 
@@ -86,12 +112,26 @@
             ciudadTrabajoToolStripMenuItem.Text = "Ciudad-Estado";
             ciudadTrabajoToolStripMenuItem.Click += ciudadEstadoToolStripMenuItem_Click;
             // 
-            // salaToolStripMenuItem
+            // funciónToolStripMenuItem
             // 
-            salaToolStripMenuItem.Name = "salaToolStripMenuItem";
-            salaToolStripMenuItem.Size = new Size(180, 22);
-            salaToolStripMenuItem.Text = "Sala";
-            salaToolStripMenuItem.Click += salaToolStripMenuItem_Click;
+            funciónToolStripMenuItem.Name = "funciónToolStripMenuItem";
+            funciónToolStripMenuItem.Size = new Size(180, 22);
+            funciónToolStripMenuItem.Text = "Función";
+            funciónToolStripMenuItem.Click += funciónToolStripMenuItem_Click;
+            // 
+            // clienteToolStripMenuItem
+            // 
+            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Text = "Cliente";
+            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
+            // 
+            // ventaToolStripMenuItem1
+            // 
+            ventaToolStripMenuItem1.Name = "ventaToolStripMenuItem1";
+            ventaToolStripMenuItem1.Size = new Size(180, 22);
+            ventaToolStripMenuItem1.Text = "Venta";
+            ventaToolStripMenuItem1.Click += ventaToolStripMenuItem1_Click;
             // 
             // ventaToolStripMenuItem
             // 
@@ -103,7 +143,7 @@
             // detalleVentaToolStripMenuItem
             // 
             detalleVentaToolStripMenuItem.Name = "detalleVentaToolStripMenuItem";
-            detalleVentaToolStripMenuItem.Size = new Size(180, 22);
+            detalleVentaToolStripMenuItem.Size = new Size(142, 22);
             detalleVentaToolStripMenuItem.Text = "Detalle Venta";
             detalleVentaToolStripMenuItem.Click += detalleVentaToolStripMenuItem_Click;
             // 
@@ -135,5 +175,10 @@
         private ToolStripMenuItem salaToolStripMenuItem;
         private ToolStripMenuItem ventaToolStripMenuItem;
         private ToolStripMenuItem detalleVentaToolStripMenuItem;
+        private ToolStripMenuItem sucursalToolStripMenuItem;
+        private ToolStripMenuItem tipoBoletoToolStripMenuItem;
+        private ToolStripMenuItem funciónToolStripMenuItem;
+        private ToolStripMenuItem clienteToolStripMenuItem;
+        private ToolStripMenuItem ventaToolStripMenuItem1;
     }
 }
