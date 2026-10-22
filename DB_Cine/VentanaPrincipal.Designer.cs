@@ -35,13 +35,15 @@
             películaToolStripMenuItem = new ToolStripMenuItem();
             ciudadTrabajoToolStripMenuItem = new ToolStripMenuItem();
             salaToolStripMenuItem = new ToolStripMenuItem();
+            ventaToolStripMenuItem = new ToolStripMenuItem();
+            detalleVentaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { catalogoToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { catalogoToolStripMenuItem, ventaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
@@ -91,6 +93,20 @@
             salaToolStripMenuItem.Text = "Sala";
             salaToolStripMenuItem.Click += salaToolStripMenuItem_Click;
             // 
+            // ventaToolStripMenuItem
+            // 
+            ventaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { detalleVentaToolStripMenuItem });
+            ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
+            ventaToolStripMenuItem.Size = new Size(48, 20);
+            ventaToolStripMenuItem.Text = "Venta";
+            // 
+            // detalleVentaToolStripMenuItem
+            // 
+            detalleVentaToolStripMenuItem.Name = "detalleVentaToolStripMenuItem";
+            detalleVentaToolStripMenuItem.Size = new Size(180, 22);
+            detalleVentaToolStripMenuItem.Text = "Detalle Venta";
+            detalleVentaToolStripMenuItem.Click += detalleVentaToolStripMenuItem_Click;
+            // 
             // VentanaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -117,5 +133,7 @@
         private ToolStripMenuItem películaToolStripMenuItem;
         private ToolStripMenuItem ciudadTrabajoToolStripMenuItem;
         private ToolStripMenuItem salaToolStripMenuItem;
+        private ToolStripMenuItem ventaToolStripMenuItem;
+        private ToolStripMenuItem detalleVentaToolStripMenuItem;
     }
 }

@@ -41,5 +41,11 @@ namespace DB_Cine
             Sala sala = new Sala();
             sala.ShowDialog();
         }
+
+        private void detalleVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Venta venta = new Venta();
+            venta.ShowDialog();
+        }
     }
 }

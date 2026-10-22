@@ -107,6 +107,10 @@ namespace DB_Cine
 
         public void reestablecerBotones()
         {
+            dgvCiudades.Enabled = true;
+            dgvCiudades.SelectionChanged -= dgvCiudades_SelectionChanged;
+
+            dgvCiudades.SelectionChanged += dgvCiudades_SelectionChanged;
             btnNuevo.Enabled = true;
             btnEliminar.Enabled = true;
             btnEditar.Enabled = true;
@@ -124,6 +128,10 @@ namespace DB_Cine
             txtClaveEstado.Enabled = false;
             txtSiglasEstado.Enabled = false;
             txtNombreEstado.Enabled = false;
+
+            txtNombreCiudad.Enabled = false;
+            txtClaveCiudad.Enabled = false;
+            cmbEstado.Enabled = false;
         }
 
         public void limpiarTodo()
@@ -140,6 +148,7 @@ namespace DB_Cine
 
         public void habilitarCiudad()
         {
+            dgvCiudades.Enabled = false;
             btnNuevo.Enabled = false;
             btnEliminar.Enabled = false;
             btnEditar.Enabled = false;
@@ -155,6 +164,7 @@ namespace DB_Cine
 
         public void habilitarEstado()
         {
+            dgvCiudades.Enabled = false;
             btnNuevo.Enabled = false;
             btnEliminar.Enabled = false;
             btnEditar.Enabled = false;
@@ -203,14 +213,22 @@ namespace DB_Cine
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (dgvCiudades.SelectedRows.Count != 1) {
+                MessageBox.Show("Debe de tener solo UN renglón seleccionado");
+                return;
+            }
             if (MessageBox.Show("¿Desea editar \"Ciudad\"?", "¿Ciudad?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+
+                
                 habilitarCiudad();
                 this.editar = true;
                 return;
             }
             if (MessageBox.Show("¿Desea editar \"Estado\"?", "¿Estado?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+
+                
                 habilitarEstado();
                 this.editar = true;
                 return;

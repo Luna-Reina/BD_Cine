@@ -37,6 +37,11 @@ namespace DB_Cine
         //Reset the buttons to their default state and disable the text fields and ComboBoxes
         public void reestablecerBotones()
         {
+            dgvPeliculas.Enabled = true;
+
+            dgvPeliculas.SelectionChanged -= dgvPeliculas_SelectionChanged;
+            dgvPeliculas.SelectionChanged += dgvPeliculas_SelectionChanged;
+
             btnNuevo.Enabled = true;
             btnEditar.Enabled = true;
             btnEliminar.Enabled = true;
@@ -54,6 +59,8 @@ namespace DB_Cine
         //Enable the text fields and ComboBoxes for editing and disable the buttons (Nuevo, Editar, Eliminar)
         public void habilitarEscribir()
         {
+            dgvPeliculas.Enabled = false;
+
             btnNuevo.Enabled = false;
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
@@ -200,6 +207,10 @@ namespace DB_Cine
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (dgvPeliculas.SelectedRows.Count != 1) {
+                MessageBox.Show("Debe de tener un renglón seleccionado, uno y solo uno");
+                return;
+            }
             this.editar = true;
             habilitarEscribir();
         }

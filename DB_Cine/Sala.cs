@@ -24,6 +24,10 @@ namespace DB_Cine
 
         public void reestablecerBotones()
         {
+            dgvSala.Enabled = true;
+            dgvSala.SelectionChanged -= dgvSala_SelectionChanged;
+            dgvSala.SelectionChanged += dgvSala_SelectionChanged;
+
             btnCancelar.Enabled = false;
             btnGuardar.Enabled = false;
             btnNuevo.Enabled = true;
@@ -31,10 +35,16 @@ namespace DB_Cine
             btnEliminar.Enabled = true;
 
             this.editar = false;
+
+            txtAsientos.Enabled = false;
+            txtNumeroSala.Enabled = false;
+            txtTipoSala.Enabled = false;
+            cmbSucursal.Enabled = false;
         }
 
         public void habilitarEscribir()
         {
+            dgvSala.Enabled=false;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
             btnNuevo.Enabled = false;
@@ -144,9 +154,15 @@ namespace DB_Cine
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.editar = true;
-            habilitarEscribir();
-            MessageBox.Show("Estás en el modo de edición", "Notificación", MessageBoxButtons.OK);
+            if (dgvSala.SelectedRows.Count == 1)
+            {
+                this.editar = true;
+                habilitarEscribir();
+                MessageBox.Show("Estás en el modo de edición", "Notificación", MessageBoxButtons.OK);
+            }
+            else {
+                MessageBox.Show("Debe de tener solo un renglon seleccionado");
+            }
         }
 
         private void dgvSala_SelectionChanged(object sender, EventArgs e)
