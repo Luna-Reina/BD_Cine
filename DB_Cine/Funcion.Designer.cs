@@ -29,23 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Funcion));
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             txtIDFuncion = new TextBox();
             dgvFuncion = new DataGridView();
-            toolStrip1 = new ToolStrip();
-            btnNuevo = new ToolStripButton();
-            btnEditar = new ToolStripButton();
-            btnEliminar = new ToolStripButton();
-            btnCancelar = new ToolStripButton();
-            btnGuardar = new ToolStripButton();
-            btnObtenerDatos = new ToolStripButton();
-            btnSalir = new ToolStripButton();
             label4 = new Label();
             txtIDPelicula = new TextBox();
             label5 = new Label();
@@ -53,8 +45,16 @@
             dtFecha = new DateTimePicker();
             timer1 = new System.Windows.Forms.Timer(components);
             dtHora = new DateTimePicker();
+            toolStrip2 = new ToolStrip();
+            btnNuevo = new ToolStripButton();
+            btnEditar = new ToolStripButton();
+            btnEliminar = new ToolStripButton();
+            btnCancelar = new ToolStripButton();
+            btnGuardar = new ToolStripButton();
+            btnObtener = new ToolStripButton();
+            btnSalir = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)dgvFuncion).BeginInit();
-            toolStrip1.SuspendLayout();
+            toolStrip2.SuspendLayout();
             SuspendLayout();
             // 
             // label3
@@ -97,107 +97,39 @@
             // 
             dgvFuncion.AllowUserToAddRows = false;
             dgvFuncion.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvFuncion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvFuncion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvFuncion.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvFuncion.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvFuncion.Location = new Point(17, 45);
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvFuncion.DefaultCellStyle = dataGridViewCellStyle5;
+            dgvFuncion.Location = new Point(28, 45);
             dgvFuncion.Margin = new Padding(3, 2, 3, 2);
             dgvFuncion.Name = "dgvFuncion";
             dgvFuncion.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvFuncion.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvFuncion.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvFuncion.RowHeadersWidth = 51;
             dgvFuncion.Size = new Size(652, 294);
             dgvFuncion.TabIndex = 24;
-            // 
-            // toolStrip1
-            // 
-            toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnNuevo, btnEditar, btnEliminar, btnCancelar, btnGuardar, btnObtenerDatos, btnSalir });
-            toolStrip1.Location = new Point(0, 0);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(692, 27);
-            toolStrip1.TabIndex = 23;
-            toolStrip1.Text = "toolStrip1";
-            // 
-            // btnNuevo
-            // 
-            btnNuevo.Image = (Image)resources.GetObject("btnNuevo.Image");
-            btnNuevo.ImageTransparentColor = Color.Magenta;
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(66, 24);
-            btnNuevo.Text = "Nuevo";
-            // 
-            // btnEditar
-            // 
-            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
-            btnEditar.ImageTransparentColor = Color.Magenta;
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(61, 24);
-            btnEditar.Text = "Editar";
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
-            btnEliminar.ImageTransparentColor = Color.Magenta;
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(74, 24);
-            btnEliminar.Text = "Eliminar";
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Enabled = false;
-            btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
-            btnCancelar.ImageTransparentColor = Color.Magenta;
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(77, 24);
-            btnCancelar.Text = "Cancelar";
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Enabled = false;
-            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
-            btnGuardar.ImageTransparentColor = Color.Magenta;
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(73, 24);
-            btnGuardar.Text = "Guardar";
-            // 
-            // btnObtenerDatos
-            // 
-            btnObtenerDatos.Image = (Image)resources.GetObject("btnObtenerDatos.Image");
-            btnObtenerDatos.ImageTransparentColor = Color.Magenta;
-            btnObtenerDatos.Name = "btnObtenerDatos";
-            btnObtenerDatos.Size = new Size(107, 24);
-            btnObtenerDatos.Text = "Obtener Datos";
-            // 
-            // btnSalir
-            // 
-            btnSalir.Alignment = ToolStripItemAlignment.Right;
-            btnSalir.Image = (Image)resources.GetObject("btnSalir.Image");
-            btnSalir.ImageTransparentColor = Color.Magenta;
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(53, 24);
-            btnSalir.Text = "Salir";
+            dgvFuncion.CellContentClick += dgvFuncion_CellContentClick;
             // 
             // label4
             // 
@@ -234,7 +166,6 @@
             txtIDSala.ReadOnly = true;
             txtIDSala.Size = new Size(133, 23);
             txtIDSala.TabIndex = 33;
-            txtIDSala.TextChanged += textBox2_TextChanged;
             // 
             // dtFecha
             // 
@@ -252,11 +183,88 @@
             dtHora.Size = new Size(133, 23);
             dtHora.TabIndex = 36;
             // 
+            // toolStrip2
+            // 
+            toolStrip2.ImageScalingSize = new Size(20, 20);
+            toolStrip2.Items.AddRange(new ToolStripItem[] { btnNuevo, btnEditar, btnEliminar, btnCancelar, btnGuardar, btnObtener, btnSalir });
+            toolStrip2.Location = new Point(0, 0);
+            toolStrip2.Name = "toolStrip2";
+            toolStrip2.Size = new Size(729, 27);
+            toolStrip2.TabIndex = 37;
+            toolStrip2.Text = "toolStrip2";
+            // 
+            // btnNuevo
+            // 
+            btnNuevo.Image = (Image)resources.GetObject("btnNuevo.Image");
+            btnNuevo.ImageTransparentColor = Color.Magenta;
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(66, 24);
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.ImageTransparentColor = Color.Magenta;
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(61, 24);
+            btnEditar.Text = "Editar";
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
+            btnEliminar.ImageTransparentColor = Color.Magenta;
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(74, 24);
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Enabled = false;
+            btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
+            btnCancelar.ImageTransparentColor = Color.Magenta;
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(77, 24);
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Enabled = false;
+            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
+            btnGuardar.ImageTransparentColor = Color.Magenta;
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(73, 24);
+            btnGuardar.Text = "Guardar";
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnObtener
+            // 
+            btnObtener.Image = (Image)resources.GetObject("btnObtener.Image");
+            btnObtener.ImageTransparentColor = Color.Magenta;
+            btnObtener.Name = "btnObtener";
+            btnObtener.Size = new Size(107, 24);
+            btnObtener.Text = "Obtener Datos";
+            btnObtener.Click += btnObtener_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Alignment = ToolStripItemAlignment.Right;
+            btnSalir.Image = (Image)resources.GetObject("btnSalir.Image");
+            btnSalir.ImageTransparentColor = Color.Magenta;
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(53, 24);
+            btnSalir.Text = "Salir";
+            btnSalir.Click += btnSalir_Click;
+            // 
             // Funcion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(692, 448);
+            ClientSize = new Size(729, 423);
+            Controls.Add(toolStrip2);
             Controls.Add(dtHora);
             Controls.Add(dtFecha);
             Controls.Add(label5);
@@ -268,13 +276,11 @@
             Controls.Add(label1);
             Controls.Add(txtIDFuncion);
             Controls.Add(dgvFuncion);
-            Controls.Add(toolStrip1);
             Name = "Funcion";
-            Text = "Funcion";
-            Load += Funcion_Load;
+            Text = "☆ Funcion";
             ((System.ComponentModel.ISupportInitialize)dgvFuncion).EndInit();
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
+            toolStrip2.ResumeLayout(false);
+            toolStrip2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -285,14 +291,6 @@
         private Label label1;
         private TextBox txtIDFuncion;
         private DataGridView dgvFuncion;
-        private ToolStrip toolStrip1;
-        private ToolStripButton btnNuevo;
-        private ToolStripButton btnEditar;
-        private ToolStripButton btnEliminar;
-        private ToolStripButton btnCancelar;
-        private ToolStripButton btnGuardar;
-        private ToolStripButton btnObtenerDatos;
-        private ToolStripButton btnSalir;
         private Label label4;
         private TextBox txtIDPelicula;
         private Label label5;
@@ -300,5 +298,13 @@
         private DateTimePicker dtFecha;
         private System.Windows.Forms.Timer timer1;
         private DateTimePicker dtHora;
+        private ToolStrip toolStrip2;
+        private ToolStripButton btnNuevo;
+        private ToolStripButton btnEditar;
+        private ToolStripButton btnEliminar;
+        private ToolStripButton btnCancelar;
+        private ToolStripButton btnGuardar;
+        private ToolStripButton btnObtener;
+        private ToolStripButton btnSalir;
     }
 }

@@ -47,7 +47,7 @@ namespace DB_Cine
             btnGuardar = new ToolStripButton();
             btnObtenerDatos = new ToolStripButton();
             btnSalir = new ToolStripButton();
-            txtNombreGenero = new TextBox();
+            cbGenero = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvGenero).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -211,21 +211,21 @@ namespace DB_Cine
             btnSalir.Text = "Salir";
             btnSalir.Click += btnSalir_Click;
             // 
-            // txtNombreGenero
+            // cbGenero
             // 
-            txtNombreGenero.Enabled = false;
-            txtNombreGenero.Location = new Point(101, 382);
-            txtNombreGenero.Margin = new Padding(3, 2, 3, 2);
-            txtNombreGenero.Name = "txtNombreGenero";
-            txtNombreGenero.Size = new Size(133, 23);
-            txtNombreGenero.TabIndex = 22;
+            cbGenero.FormattingEnabled = true;
+            cbGenero.Items.AddRange(new object[] { "Drama", "Aventura", "Acción", "Comedia", "Terror", "Romance", "Humor negro", "Ciencia Ficción", "Fantasía", "Musical", "Suspenso" });
+            cbGenero.Location = new Point(101, 382);
+            cbGenero.Name = "cbGenero";
+            cbGenero.Size = new Size(133, 23);
+            cbGenero.TabIndex = 22;
             // 
             // Genero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(729, 423);
-            Controls.Add(txtNombreGenero);
+            Controls.Add(cbGenero);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -234,7 +234,7 @@ namespace DB_Cine
             Controls.Add(dgvGenero);
             Controls.Add(toolStrip1);
             Name = "Genero";
-            Text = "Genero";
+            Text = "☆ Genero";
             Load += Genero_Load;
             ((System.ComponentModel.ISupportInitialize)dgvGenero).EndInit();
             toolStrip1.ResumeLayout(false);
@@ -258,6 +258,6 @@ namespace DB_Cine
         private ToolStripButton btnGuardar;
         private ToolStripButton btnObtenerDatos;
         private ToolStripButton btnSalir;
-        private TextBox txtNombreGenero;
+        private ComboBox cbGenero;
     }
 }

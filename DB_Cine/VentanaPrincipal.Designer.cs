@@ -52,7 +52,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(744, 24);
+            menuStrip1.Size = new Size(729, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -66,70 +66,70 @@
             // clasificaciónToolStripMenuItem
             // 
             clasificaciónToolStripMenuItem.Name = "clasificaciónToolStripMenuItem";
-            clasificaciónToolStripMenuItem.Size = new Size(180, 22);
+            clasificaciónToolStripMenuItem.Size = new Size(152, 22);
             clasificaciónToolStripMenuItem.Text = "Clasificación";
             clasificaciónToolStripMenuItem.Click += clasificaciónToolStripMenuItem_Click;
             // 
             // géneroToolStripMenuItem
             // 
             géneroToolStripMenuItem.Name = "géneroToolStripMenuItem";
-            géneroToolStripMenuItem.Size = new Size(180, 22);
+            géneroToolStripMenuItem.Size = new Size(152, 22);
             géneroToolStripMenuItem.Text = "Género";
             géneroToolStripMenuItem.Click += géneroToolStripMenuItem_Click;
             // 
             // películaToolStripMenuItem
             // 
             películaToolStripMenuItem.Name = "películaToolStripMenuItem";
-            películaToolStripMenuItem.Size = new Size(180, 22);
+            películaToolStripMenuItem.Size = new Size(152, 22);
             películaToolStripMenuItem.Text = "Película";
             películaToolStripMenuItem.Click += películaToolStripMenuItem_Click;
             // 
             // sucursalToolStripMenuItem
             // 
             sucursalToolStripMenuItem.Name = "sucursalToolStripMenuItem";
-            sucursalToolStripMenuItem.Size = new Size(180, 22);
+            sucursalToolStripMenuItem.Size = new Size(152, 22);
             sucursalToolStripMenuItem.Text = "Sucursal";
             sucursalToolStripMenuItem.Click += sucursalToolStripMenuItem_Click;
             // 
             // salaToolStripMenuItem
             // 
             salaToolStripMenuItem.Name = "salaToolStripMenuItem";
-            salaToolStripMenuItem.Size = new Size(180, 22);
+            salaToolStripMenuItem.Size = new Size(152, 22);
             salaToolStripMenuItem.Text = "Sala";
             salaToolStripMenuItem.Click += salaToolStripMenuItem_Click;
             // 
             // tipoBoletoToolStripMenuItem
             // 
             tipoBoletoToolStripMenuItem.Name = "tipoBoletoToolStripMenuItem";
-            tipoBoletoToolStripMenuItem.Size = new Size(180, 22);
+            tipoBoletoToolStripMenuItem.Size = new Size(152, 22);
             tipoBoletoToolStripMenuItem.Text = "Tipo Boleto";
             tipoBoletoToolStripMenuItem.Click += tipoBoletoToolStripMenuItem_Click;
             // 
             // ciudadTrabajoToolStripMenuItem
             // 
             ciudadTrabajoToolStripMenuItem.Name = "ciudadTrabajoToolStripMenuItem";
-            ciudadTrabajoToolStripMenuItem.Size = new Size(180, 22);
+            ciudadTrabajoToolStripMenuItem.Size = new Size(152, 22);
             ciudadTrabajoToolStripMenuItem.Text = "Ciudad-Estado";
             ciudadTrabajoToolStripMenuItem.Click += ciudadEstadoToolStripMenuItem_Click;
             // 
             // funciónToolStripMenuItem
             // 
             funciónToolStripMenuItem.Name = "funciónToolStripMenuItem";
-            funciónToolStripMenuItem.Size = new Size(180, 22);
+            funciónToolStripMenuItem.Size = new Size(152, 22);
             funciónToolStripMenuItem.Text = "Función";
             funciónToolStripMenuItem.Click += funciónToolStripMenuItem_Click;
             // 
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Size = new Size(152, 22);
             clienteToolStripMenuItem.Text = "Cliente";
             clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // ventaToolStripMenuItem1
             // 
             ventaToolStripMenuItem1.Name = "ventaToolStripMenuItem1";
-            ventaToolStripMenuItem1.Size = new Size(180, 22);
+            ventaToolStripMenuItem1.Size = new Size(152, 22);
             ventaToolStripMenuItem1.Text = "Venta";
             ventaToolStripMenuItem1.Click += ventaToolStripMenuItem1_Click;
             // 
@@ -151,12 +151,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 383);
+            ClientSize = new Size(729, 423);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 2, 3, 2);
             Name = "VentanaPrincipal";
-            Text = "Ventana Principal";
+            Text = "☆ Ventana Principal ☆";
             Load += VentanaPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

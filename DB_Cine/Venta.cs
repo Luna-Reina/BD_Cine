@@ -104,9 +104,11 @@ namespace DB_Cine
 
         public void obtenerDatos()
         {
-            try { 
+            try
+            {
                 dgvVenta.SelectionChanged -= dgvVenta_SelectionChanged;
-                using (SqlConnection conn = new Conexion().ObtenerConexion()) {
+                using (SqlConnection conn = new Conexion().ObtenerConexion())
+                {
                     string query = @"SELECT 
                                         V.IDVenta AS [ID Venta],
                                         V.IDCliente AS [IDCliente],
@@ -123,13 +125,21 @@ namespace DB_Cine
                                     INNER JOIN dbo.TipoBoleto TB ON V.IDTipoBoleto = TB.IDTipoBoleto";
                 }
 
-            } catch(Exception ex) {
-                MessageBox.Show("Error: "+ex.Message,"Error", MessageBoxButtons.OK);
-            }finally { 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK);
+            }
+            finally
+            {
                 dgvVenta.SelectionChanged += dgvVenta_SelectionChanged;
             }
         }
 
+        private void Venta_Load(object sender, EventArgs e)
+        {
+
+        }
     }//close partial class
 
 

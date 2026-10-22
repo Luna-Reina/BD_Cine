@@ -44,7 +44,7 @@ namespace DB_Cine
 
         public void habilitarEscribir()
         {
-            dgvSala.Enabled=false;
+            dgvSala.Enabled = false;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
             btnNuevo.Enabled = false;
@@ -160,7 +160,8 @@ namespace DB_Cine
                 habilitarEscribir();
                 MessageBox.Show("Estás en el modo de edición", "Notificación", MessageBoxButtons.OK);
             }
-            else {
+            else
+            {
                 MessageBox.Show("Debe de tener solo un renglon seleccionado");
             }
         }
@@ -294,6 +295,11 @@ namespace DB_Cine
         private void btnObtenerDatos_Click(object sender, EventArgs e)
         {
             obtenerDatos();
+        }
+
+        private void Sala_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

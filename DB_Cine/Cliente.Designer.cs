@@ -40,19 +40,19 @@
             label1 = new Label();
             txtIDCliente = new TextBox();
             dgvCliente = new DataGridView();
-            toolStrip1 = new ToolStrip();
+            txtNombre = new TextBox();
+            txtCelular = new TextBox();
+            txtCorreo = new TextBox();
+            toolStrip2 = new ToolStrip();
             btnNuevo = new ToolStripButton();
             btnEditar = new ToolStripButton();
             btnEliminar = new ToolStripButton();
             btnCancelar = new ToolStripButton();
             btnGuardar = new ToolStripButton();
-            btnObtenerDatos = new ToolStripButton();
+            btnObtener = new ToolStripButton();
             btnSalir = new ToolStripButton();
-            txtNombre = new TextBox();
-            txtCelular = new TextBox();
-            txtCorreo = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
-            toolStrip1.SuspendLayout();
+            toolStrip2.SuspendLayout();
             SuspendLayout();
             // 
             // label5
@@ -90,7 +90,6 @@
             label3.Size = new Size(43, 15);
             label3.TabIndex = 42;
             label3.Text = "Correo";
-            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -156,75 +155,6 @@
             dgvCliente.Size = new Size(652, 306);
             dgvCliente.TabIndex = 38;
             // 
-            // toolStrip1
-            // 
-            toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnNuevo, btnEditar, btnEliminar, btnCancelar, btnGuardar, btnObtenerDatos, btnSalir });
-            toolStrip1.Location = new Point(0, 0);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(690, 27);
-            toolStrip1.TabIndex = 37;
-            toolStrip1.Text = "toolStrip1";
-            // 
-            // btnNuevo
-            // 
-            btnNuevo.Image = (Image)resources.GetObject("btnNuevo.Image");
-            btnNuevo.ImageTransparentColor = Color.Magenta;
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(66, 24);
-            btnNuevo.Text = "Nuevo";
-            // 
-            // btnEditar
-            // 
-            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
-            btnEditar.ImageTransparentColor = Color.Magenta;
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(61, 24);
-            btnEditar.Text = "Editar";
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
-            btnEliminar.ImageTransparentColor = Color.Magenta;
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(74, 24);
-            btnEliminar.Text = "Eliminar";
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Enabled = false;
-            btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
-            btnCancelar.ImageTransparentColor = Color.Magenta;
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(77, 24);
-            btnCancelar.Text = "Cancelar";
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Enabled = false;
-            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
-            btnGuardar.ImageTransparentColor = Color.Magenta;
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(73, 24);
-            btnGuardar.Text = "Guardar";
-            // 
-            // btnObtenerDatos
-            // 
-            btnObtenerDatos.Image = (Image)resources.GetObject("btnObtenerDatos.Image");
-            btnObtenerDatos.ImageTransparentColor = Color.Magenta;
-            btnObtenerDatos.Name = "btnObtenerDatos";
-            btnObtenerDatos.Size = new Size(107, 24);
-            btnObtenerDatos.Text = "Obtener Datos";
-            // 
-            // btnSalir
-            // 
-            btnSalir.Alignment = ToolStripItemAlignment.Right;
-            btnSalir.Image = (Image)resources.GetObject("btnSalir.Image");
-            btnSalir.ImageTransparentColor = Color.Magenta;
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(53, 24);
-            btnSalir.Text = "Salir";
-            // 
             // txtNombre
             // 
             txtNombre.Location = new Point(310, 373);
@@ -246,11 +176,88 @@
             txtCorreo.Size = new Size(341, 23);
             txtCorreo.TabIndex = 51;
             // 
+            // toolStrip2
+            // 
+            toolStrip2.ImageScalingSize = new Size(20, 20);
+            toolStrip2.Items.AddRange(new ToolStripItem[] { btnNuevo, btnEditar, btnEliminar, btnCancelar, btnGuardar, btnObtener, btnSalir });
+            toolStrip2.Location = new Point(0, 0);
+            toolStrip2.Name = "toolStrip2";
+            toolStrip2.Size = new Size(729, 27);
+            toolStrip2.TabIndex = 52;
+            toolStrip2.Text = "toolStrip2";
+            // 
+            // btnNuevo
+            // 
+            btnNuevo.Image = (Image)resources.GetObject("btnNuevo.Image");
+            btnNuevo.ImageTransparentColor = Color.Magenta;
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(66, 24);
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.ImageTransparentColor = Color.Magenta;
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(61, 24);
+            btnEditar.Text = "Editar";
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
+            btnEliminar.ImageTransparentColor = Color.Magenta;
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(74, 24);
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Enabled = false;
+            btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
+            btnCancelar.ImageTransparentColor = Color.Magenta;
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(77, 24);
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Enabled = false;
+            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
+            btnGuardar.ImageTransparentColor = Color.Magenta;
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(73, 24);
+            btnGuardar.Text = "Guardar";
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnObtener
+            // 
+            btnObtener.Image = (Image)resources.GetObject("btnObtener.Image");
+            btnObtener.ImageTransparentColor = Color.Magenta;
+            btnObtener.Name = "btnObtener";
+            btnObtener.Size = new Size(107, 24);
+            btnObtener.Text = "Obtener Datos";
+            btnObtener.Click += btnObtener_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Alignment = ToolStripItemAlignment.Right;
+            btnSalir.Image = (Image)resources.GetObject("btnSalir.Image");
+            btnSalir.ImageTransparentColor = Color.Magenta;
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(53, 24);
+            btnSalir.Text = "Salir";
+            btnSalir.Click += btnSalir_Click;
+            // 
             // Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(690, 457);
+            ClientSize = new Size(729, 423);
+            Controls.Add(toolStrip2);
             Controls.Add(txtCorreo);
             Controls.Add(txtCelular);
             Controls.Add(txtNombre);
@@ -262,13 +269,11 @@
             Controls.Add(label1);
             Controls.Add(txtIDCliente);
             Controls.Add(dgvCliente);
-            Controls.Add(toolStrip1);
             Name = "Cliente";
-            Text = "Cliente";
-            Load += Cliente_Load;
+            Text = "☆ Cliente";
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
+            toolStrip2.ResumeLayout(false);
+            toolStrip2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -282,16 +287,16 @@
         private Label label1;
         private TextBox txtIDCliente;
         private DataGridView dgvCliente;
-        private ToolStrip toolStrip1;
+        private TextBox txtNombre;
+        private TextBox txtCelular;
+        private TextBox txtCorreo;
+        private ToolStrip toolStrip2;
         private ToolStripButton btnNuevo;
         private ToolStripButton btnEditar;
         private ToolStripButton btnEliminar;
         private ToolStripButton btnCancelar;
         private ToolStripButton btnGuardar;
-        private ToolStripButton btnObtenerDatos;
+        private ToolStripButton btnObtener;
         private ToolStripButton btnSalir;
-        private TextBox txtNombre;
-        private TextBox txtCelular;
-        private TextBox txtCorreo;
     }
 }

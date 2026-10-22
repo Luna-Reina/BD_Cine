@@ -19,7 +19,7 @@ namespace DB_Cine
         public void limpiarCampos()
         {
             txtIDGenero.Text = "";
-            txtNombreGenero.Text = "";
+            cbGenero.Text = "";
             txtDescripcion.Text = "";
         }
 
@@ -34,7 +34,7 @@ namespace DB_Cine
             this.editar = false;
 
             txtIDGenero.Enabled = false;
-            txtNombreGenero.Enabled = false;
+            cbGenero.Enabled = false;
             txtDescripcion.Enabled = false;
 
             dgvGenero.Enabled = true;
@@ -49,7 +49,7 @@ namespace DB_Cine
             btnCancelar.Enabled = true;
 
             txtIDGenero.Enabled = !this.editar;
-            txtNombreGenero.Enabled = true;
+            cbGenero.Enabled = true;
             txtDescripcion.Enabled = true;
 
             dgvGenero.Enabled = false;
@@ -151,14 +151,14 @@ namespace DB_Cine
                 DataGridViewRow row = dgvGenero.SelectedRows[0];
 
                 txtIDGenero.Text = row.Cells["ID"].Value?.ToString();
-                txtNombreGenero.Text = row.Cells["Nombre"].Value?.ToString();
+                cbGenero.Text = row.Cells["Nombre"].Value?.ToString();
                 txtDescripcion.Text = row.Cells["Descripción"].Value?.ToString();
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombreGenero.Text))
+            if (string.IsNullOrWhiteSpace(cbGenero.Text))
             {
                 MessageBox.Show("Escribe el nombre del género.",
                     "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -197,7 +197,7 @@ namespace DB_Cine
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@IDGenero", idGenero);
-                        cmd.Parameters.AddWithValue("@NombreGenero", txtNombreGenero.Text);
+                        cmd.Parameters.AddWithValue("@NombreGenero", cbGenero.Text);
                         cmd.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
 
                         int renglonesAfectados = cmd.ExecuteNonQuery();
@@ -283,5 +283,6 @@ namespace DB_Cine
                 obtenerDatos();
             }
         }
-    }
-}
+
+    }//Close class
+}//Close namespace

@@ -58,7 +58,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnNuevo, btnEditar, btnEliminar, btnCancelar, btnGuardar, btnObtenerDatos, btnSalir });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(800, 27);
+            toolStrip1.Size = new Size(729, 27);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -133,17 +133,17 @@
             dgvSala.AllowUserToAddRows = false;
             dgvSala.AllowUserToDeleteRows = false;
             dgvSala.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSala.Location = new Point(3, 37);
+            dgvSala.Location = new Point(26, 37);
             dgvSala.Name = "dgvSala";
             dgvSala.ReadOnly = true;
-            dgvSala.Size = new Size(785, 227);
+            dgvSala.Size = new Size(678, 227);
             dgvSala.TabIndex = 2;
             dgvSala.SelectionChanged += dgvSala_SelectionChanged;
             // 
             // txtTipoSala
             // 
             txtTipoSala.Enabled = false;
-            txtTipoSala.Location = new Point(149, 375);
+            txtTipoSala.Location = new Point(428, 282);
             txtTipoSala.Margin = new Padding(3, 2, 3, 2);
             txtTipoSala.Name = "txtTipoSala";
             txtTipoSala.Size = new Size(110, 23);
@@ -152,7 +152,7 @@
             // txtNumeroSala
             // 
             txtNumeroSala.Enabled = false;
-            txtNumeroSala.Location = new Point(149, 348);
+            txtNumeroSala.Location = new Point(139, 375);
             txtNumeroSala.Margin = new Padding(3, 2, 3, 2);
             txtNumeroSala.Name = "txtNumeroSala";
             txtNumeroSala.Size = new Size(110, 23);
@@ -160,18 +160,18 @@
             // 
             // txtIdSala
             // 
-            txtIdSala.Location = new Point(149, 290);
+            txtIdSala.Location = new Point(139, 294);
             txtIdSala.Margin = new Padding(3, 2, 3, 2);
             txtIdSala.Name = "txtIdSala";
             txtIdSala.ReadOnly = true;
-            txtIdSala.Size = new Size(110, 23);
+            txtIdSala.Size = new Size(120, 23);
             txtIdSala.TabIndex = 23;
             // 
             // cmbSucursal
             // 
             cmbSucursal.Enabled = false;
             cmbSucursal.FormattingEnabled = true;
-            cmbSucursal.Location = new Point(149, 321);
+            cmbSucursal.Location = new Point(139, 337);
             cmbSucursal.Margin = new Padding(3, 2, 3, 2);
             cmbSucursal.Name = "cmbSucursal";
             cmbSucursal.Size = new Size(133, 23);
@@ -180,7 +180,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(37, 378);
+            label8.Location = new Point(316, 285);
             label8.Name = "label8";
             label8.Size = new Size(71, 15);
             label8.TabIndex = 21;
@@ -189,7 +189,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(35, 350);
+            label7.Location = new Point(25, 377);
             label7.Name = "label7";
             label7.Size = new Size(75, 15);
             label7.TabIndex = 20;
@@ -198,7 +198,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(38, 318);
+            label6.Location = new Point(28, 334);
             label6.Name = "label6";
             label6.Size = new Size(51, 15);
             label6.TabIndex = 19;
@@ -207,7 +207,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(37, 291);
+            label5.Location = new Point(27, 295);
             label5.Name = "label5";
             label5.Size = new Size(41, 15);
             label5.TabIndex = 18;
@@ -216,7 +216,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(320, 298);
+            label1.Location = new Point(318, 317);
             label1.Name = "label1";
             label1.Size = new Size(115, 15);
             label1.TabIndex = 26;
@@ -225,7 +225,7 @@
             // txtAsientos
             // 
             txtAsientos.Enabled = false;
-            txtAsientos.Location = new Point(450, 291);
+            txtAsientos.Location = new Point(448, 310);
             txtAsientos.Name = "txtAsientos";
             txtAsientos.Size = new Size(100, 23);
             txtAsientos.TabIndex = 27;
@@ -234,7 +234,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(729, 423);
             Controls.Add(txtAsientos);
             Controls.Add(label1);
             Controls.Add(txtTipoSala);
@@ -249,6 +249,7 @@
             Controls.Add(toolStrip1);
             Name = "Sala";
             Text = "Sala";
+            Load += Sala_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSala).EndInit();

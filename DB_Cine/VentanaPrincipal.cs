@@ -27,7 +27,8 @@ namespace DB_Cine
 
         private void sucursalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Sucursal sucursal = new Sucursal();
+            sucursal.ShowDialog();
         }
 
         private void salaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,7 +39,8 @@ namespace DB_Cine
 
         private void tipoBoletoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TipoBoleto tipoboleto = new TipoBoleto();
+            tipoboleto.ShowDialog();
         }
 
         private void ciudadEstadoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,17 +51,20 @@ namespace DB_Cine
 
         private void funciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Funcion funcion = new Funcion();
+            funcion.ShowDialog();
         }
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Cliente cliente = new Cliente();
+            cliente.ShowDialog();
         }
 
         private void ventaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            Venta venta = new Venta();
+            venta.ShowDialog();
         }
 
         private void detalleVentaToolStripMenuItem_Click(object sender, EventArgs e)
