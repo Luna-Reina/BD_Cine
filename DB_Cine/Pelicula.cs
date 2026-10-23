@@ -207,7 +207,8 @@ namespace DB_Cine
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dgvPeliculas.SelectedRows.Count != 1) {
+            if (dgvPeliculas.SelectedRows.Count != 1)
+            {
                 MessageBox.Show("Debe de tener un renglón seleccionado, uno y solo uno");
                 return;
             }
@@ -314,19 +315,31 @@ namespace DB_Cine
             }//close edit record
         }
 
-        private void Pelicula_Load(object sender, EventArgs e)
+        
+
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
+            try {
+                using (SqlConnection conn = new Conexion().ObtenerConexion()) {
+                    conn.Open();
+                    string query = @"DELETE FROM dbo.Pelicula
+                                WHERE IDPelicula = @IDPelicula";
+                    using (SqlCommand cmd = new SqlCommand(query, conn)) {
+                        cmd.Parameters.AddWithValue("IDPelicula", Convert.ToInt32(txtIDPelicula.Text));
 
-        }
-
-        private void txtIDPelicula_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbClasificacion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+                        int renglonesAfectados = cmd.ExecuteNonQuery();
+                        if (renglonesAfectados > 0) {
+                            MessageBox.Show("Se eliminó registro con éxito", "Exito", MessageBoxButtons.OK);
+                        }
+                    }
+                }
+            } catch(Exception ex) {
+                MessageBox.Show("Error: "+ex.Message,"Error", MessageBoxButtons.OK);
+            } finally {
+                reestablecerBotones();
+                Limpiar();
+                obtenerDatos();
+            }
         }
     }
 }

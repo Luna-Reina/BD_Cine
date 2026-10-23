@@ -61,11 +61,6 @@ namespace DB_Cine
             cliente.ShowDialog();
         }
 
-        private void ventaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Venta venta = new Venta();
-            venta.ShowDialog();
-        }
 
         private void detalleVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -73,10 +68,6 @@ namespace DB_Cine
             venta.ShowDialog();
         }
 
-        private void VentanaPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
 
     }//Close Class
 }//Close Namespace

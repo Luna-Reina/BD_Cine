@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pelicula));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             toolStrip1 = new ToolStrip();
             btnNuevo = new ToolStripButton();
             btnEditar = new ToolStripButton();
@@ -61,7 +61,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnNuevo, btnEditar, btnEliminar, btnCancelar, btnGuardar, btnObtenerDatos, btnSalir });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(729, 27);
+            toolStrip1.Size = new Size(833, 27);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -70,7 +70,7 @@
             btnNuevo.Image = (Image)resources.GetObject("btnNuevo.Image");
             btnNuevo.ImageTransparentColor = Color.Magenta;
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(66, 24);
+            btnNuevo.Size = new Size(76, 24);
             btnNuevo.Text = "Nuevo";
             btnNuevo.Click += btnNuevo_Click;
             // 
@@ -79,7 +79,7 @@
             btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
             btnEditar.ImageTransparentColor = Color.Magenta;
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(61, 24);
+            btnEditar.Size = new Size(72, 24);
             btnEditar.Text = "Editar";
             btnEditar.Click += btnEditar_Click;
             // 
@@ -88,8 +88,9 @@
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
             btnEliminar.ImageTransparentColor = Color.Magenta;
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(74, 24);
+            btnEliminar.Size = new Size(87, 24);
             btnEliminar.Text = "Eliminar";
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCancelar
             // 
@@ -97,7 +98,7 @@
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageTransparentColor = Color.Magenta;
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(77, 24);
+            btnCancelar.Size = new Size(90, 24);
             btnCancelar.Text = "Cancelar";
             btnCancelar.Click += btnCancelar_Click;
             // 
@@ -107,7 +108,7 @@
             btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
             btnGuardar.ImageTransparentColor = Color.Magenta;
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(73, 24);
+            btnGuardar.Size = new Size(86, 24);
             btnGuardar.Text = "Guardar";
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -116,7 +117,7 @@
             btnObtenerDatos.Image = (Image)resources.GetObject("btnObtenerDatos.Image");
             btnObtenerDatos.ImageTransparentColor = Color.Magenta;
             btnObtenerDatos.Name = "btnObtenerDatos";
-            btnObtenerDatos.Size = new Size(107, 24);
+            btnObtenerDatos.Size = new Size(130, 24);
             btnObtenerDatos.Text = "Obtener Datos";
             btnObtenerDatos.Click += btnObtenerDatos_Click;
             // 
@@ -126,7 +127,7 @@
             btnSalir.Image = (Image)resources.GetObject("btnSalir.Image");
             btnSalir.ImageTransparentColor = Color.Magenta;
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(53, 24);
+            btnSalir.Size = new Size(62, 24);
             btnSalir.Text = "Salir";
             btnSalir.Click += btnSalir_Click;
             // 
@@ -134,139 +135,133 @@
             // 
             dgvPeliculas.AllowUserToAddRows = false;
             dgvPeliculas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvPeliculas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvPeliculas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvPeliculas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvPeliculas.DefaultCellStyle = dataGridViewCellStyle5;
-            dgvPeliculas.Location = new Point(17, 39);
-            dgvPeliculas.Margin = new Padding(3, 2, 3, 2);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvPeliculas.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvPeliculas.Location = new Point(19, 52);
             dgvPeliculas.Name = "dgvPeliculas";
             dgvPeliculas.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvPeliculas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvPeliculas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvPeliculas.RowHeadersWidth = 51;
-            dgvPeliculas.Size = new Size(693, 252);
+            dgvPeliculas.Size = new Size(792, 336);
             dgvPeliculas.TabIndex = 1;
             dgvPeliculas.SelectionChanged += dgvPeliculas_SelectionChanged;
             // 
             // txtIDPelicula
             // 
-            txtIDPelicula.Location = new Point(101, 319);
-            txtIDPelicula.Margin = new Padding(3, 2, 3, 2);
+            txtIDPelicula.Location = new Point(115, 425);
             txtIDPelicula.Name = "txtIDPelicula";
             txtIDPelicula.ReadOnly = true;
-            txtIDPelicula.Size = new Size(133, 23);
+            txtIDPelicula.Size = new Size(151, 27);
             txtIDPelicula.TabIndex = 2;
-            txtIDPelicula.TextChanged += txtIDPelicula_TextChanged;
+            //txtIDPelicula.TextChanged += txtIDPelicula_TextChanged;
             // 
             // txtNombrePelicula
             // 
             txtNombrePelicula.Enabled = false;
-            txtNombrePelicula.Location = new Point(101, 359);
-            txtNombrePelicula.Margin = new Padding(3, 2, 3, 2);
+            txtNombrePelicula.Location = new Point(115, 479);
             txtNombrePelicula.Name = "txtNombrePelicula";
-            txtNombrePelicula.Size = new Size(133, 23);
+            txtNombrePelicula.Size = new Size(151, 27);
             txtNombrePelicula.TabIndex = 3;
             // 
             // txtDuracion
             // 
             txtDuracion.Enabled = false;
-            txtDuracion.Location = new Point(330, 320);
-            txtDuracion.Margin = new Padding(3, 2, 3, 2);
+            txtDuracion.Location = new Point(377, 427);
             txtDuracion.Name = "txtDuracion";
-            txtDuracion.Size = new Size(133, 23);
+            txtDuracion.Size = new Size(151, 27);
             txtDuracion.TabIndex = 4;
             // 
             // cbGenero
             // 
             cbGenero.Enabled = false;
             cbGenero.FormattingEnabled = true;
-            cbGenero.Location = new Point(330, 359);
-            cbGenero.Margin = new Padding(3, 2, 3, 2);
+            cbGenero.Location = new Point(377, 479);
             cbGenero.Name = "cbGenero";
-            cbGenero.Size = new Size(133, 23);
+            cbGenero.Size = new Size(151, 28);
             cbGenero.TabIndex = 5;
             // 
             // cbClasificacion
             // 
             cbClasificacion.Enabled = false;
             cbClasificacion.FormattingEnabled = true;
-            cbClasificacion.Location = new Point(577, 356);
-            cbClasificacion.Margin = new Padding(3, 2, 3, 2);
+            cbClasificacion.Location = new Point(659, 475);
             cbClasificacion.Name = "cbClasificacion";
-            cbClasificacion.Size = new Size(133, 23);
+            cbClasificacion.Size = new Size(151, 28);
             cbClasificacion.TabIndex = 6;
-            cbClasificacion.SelectedIndexChanged += cbClasificacion_SelectedIndexChanged;
+            //cbClasificacion.SelectedIndexChanged += cbClasificacion_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(17, 323);
+            label1.Location = new Point(19, 431);
             label1.Name = "label1";
-            label1.Size = new Size(62, 15);
+            label1.Size = new Size(78, 20);
             label1.TabIndex = 7;
             label1.Text = "ID Película";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(17, 362);
+            label2.Location = new Point(19, 483);
             label2.Name = "label2";
-            label2.Size = new Size(51, 15);
+            label2.Size = new Size(64, 20);
             label2.TabIndex = 8;
             label2.Text = "Nombre";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(258, 320);
+            label3.Location = new Point(295, 427);
             label3.Name = "label3";
-            label3.Size = new Size(55, 15);
+            label3.Size = new Size(69, 20);
             label3.TabIndex = 9;
             label3.Text = "Duración";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(258, 359);
+            label4.Location = new Point(295, 479);
             label4.Name = "label4";
-            label4.Size = new Size(45, 15);
+            label4.Size = new Size(57, 20);
             label4.TabIndex = 10;
             label4.Text = "Género";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(488, 359);
+            label5.Location = new Point(558, 479);
             label5.Name = "label5";
-            label5.Size = new Size(74, 15);
+            label5.Size = new Size(92, 20);
             label5.TabIndex = 11;
             label5.Text = "Clasificación";
             // 
             // Pelicula
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(729, 423);
+            ClientSize = new Size(833, 564);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -282,7 +277,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Pelicula";
             Text = "☆ Pelicula";
-            Load += Pelicula_Load;
+            //Load += Pelicula_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPeliculas).EndInit();
