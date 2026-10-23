@@ -59,7 +59,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnNuevo, btnEditar, btnEliminar, btnCancelar, btnGuardar, btnObtenerDatos, btnSalir });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(914, 27);
+            toolStrip1.Size = new Size(953, 27);
             toolStrip1.TabIndex = 2;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -249,7 +249,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(953, 557);
             Controls.Add(txtPrecio);
             Controls.Add(txtIDVenta);
             Controls.Add(cmbBoleto);
@@ -265,7 +265,7 @@
             Controls.Add(toolStrip1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Venta";
-            Text = "Venta";
+            Text = "☆ Venta";
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVenta).EndInit();

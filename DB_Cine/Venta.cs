@@ -406,6 +406,7 @@ namespace DB_Cine
                 reestablecerBotones();
                 limpiarTodo();
             }
+
         }
     }//close partial class
 

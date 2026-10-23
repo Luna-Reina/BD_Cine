@@ -7,16 +7,16 @@ namespace DB_Cine
             InitializeComponent();
         }
 
-        private void géneroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Genero genero = new Genero();
-            genero.ShowDialog();
-        }
-
         private void clasificaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Clasificacion clasificacion = new Clasificacion();
             clasificacion.ShowDialog();
+        }
+
+        private void géneroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Genero genero = new Genero();
+            genero.ShowDialog();
         }
 
         private void películaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -25,15 +25,10 @@ namespace DB_Cine
             pelicula.ShowDialog();
         }
 
-        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        private void sucursalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void ciudadEstadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CiudadEstado ciudadestado = new CiudadEstado();
-            ciudadestado.ShowDialog();
+            Sucursal sucursal = new Sucursal();
+            sucursal.ShowDialog();
         }
 
         private void salaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,10 +37,46 @@ namespace DB_Cine
             sala.ShowDialog();
         }
 
+        private void tipoBoletoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoBoleto tipoboleto = new TipoBoleto();
+            tipoboleto.ShowDialog();
+        }
+
+        private void ciudadEstadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CiudadEstado ciudadestado = new CiudadEstado();
+            ciudadestado.ShowDialog();
+        }
+
+        private void funciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Funcion funcion = new Funcion();
+            funcion.ShowDialog();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente.ShowDialog();
+        }
+
+        private void ventaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Venta venta = new Venta();
+            venta.ShowDialog();
+        }
+
         private void detalleVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Venta venta = new Venta();
             venta.ShowDialog();
         }
-    }
-}
+
+        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+    }//Close Class
+}//Close Namespace
