@@ -7,15 +7,20 @@ namespace DB_Cine
 {
     public partial class Clasificacion : Form
     {
-        // Conexión a SQL
+
+        //conexion SQL
         private string conexionString = @"Server=KAROLI\DS3;Database=Cine;Trusted_Connection=True;TrustServerCertificate=True;";
         private bool esNuevo = false;
 
+   
         public Clasificacion()
         {
             InitializeComponent();
 
-            // Vincular eventos manualmente
+            // Enlazar evento Load del formulario
+            this.Load += Clasificacion_Load;
+
+            // Enlazar botones manualmente
             btnNuevo.Click += btnNuevo_Click;
             btnEditar.Click += btnEditar_Click;
             btnEliminar.Click += btnEliminar_Click;
@@ -23,9 +28,10 @@ namespace DB_Cine
             btnGuardar.Click += btnGuardar_Click;
             btnObtenerDatos.Click += btnObtenerDatos_Click;
             btnSalir.Click += btnSalir_Click;
+
+            // Enlazar evento de selección en la tabla
             dgvClasificacion.CellClick += dgvClasificaciones_CellClick;
         }
-
         private void Clasificacion_Load(object sender, EventArgs e)
         {
             DeshabilitarCampos();
@@ -34,17 +40,17 @@ namespace DB_Cine
 
         private void LimpiarCampos()
         {
-            IDClas.Clear();
-            claveClas.Clear();
-            descripcionClas.Clear();
+            txtIdClasificacion.Clear();
+            txtClave.Clear();
+            txtDescripcion.Clear();
             dateTimePicker1.Value = DateTime.Now;
             dateTimePicker2.Value = DateTime.Now;
         }
 
         private void HabilitarCampos(bool habilitar)
         {
-            claveClas.Enabled = habilitar;
-            descripcionClas.Enabled = habilitar;
+            txtClave.Enabled = habilitar;
+            txtDescripcion.Enabled = habilitar;
             dateTimePicker1.Enabled = habilitar;
             dateTimePicker2.Enabled = habilitar;
 
@@ -60,10 +66,9 @@ namespace DB_Cine
         private void DeshabilitarCampos()
         {
             HabilitarCampos(false);
-            IDClas.Enabled = false; // El ID debe estar deshabilitado
+            txtIdClasificacion.Enabled = false;
         }
 
-        // DataGridView (Cargar datos)
         private void ObtenerDatos()
         {
             using (SqlConnection con = new SqlConnection(conexionString))
@@ -78,85 +83,50 @@ namespace DB_Cine
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar los datos: " + ex.Message);
+                    MessageBox.Show("Error al cargar datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        // Seleccionar filas en DataGridView
         private void dgvClasificaciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow fila = dgvClasificacion.Rows[e.RowIndex];
-                IDClas.Text = fila.Cells["IdClasificacion"].Value.ToString();
-                claveClas.Text = fila.Cells["Clave"].Value.ToString();
-                descripcionClas.Text = fila.Cells["Descripcion"].Value.ToString();
+                txtIdClasificacion.Text = fila.Cells["IdClasificacion"].Value?.ToString() ?? "";
+                txtClave.Text = fila.Cells["Clave"].Value?.ToString() ?? "";
+                txtDescripcion.Text = fila.Cells["Descripcion"].Value?.ToString() ?? "";
 
-                if (DateTime.TryParse(fila.Cells["FecharHoraCreacion"].Value.ToString(), out DateTime fechaGuardada))
+                if (DateTime.TryParse(fila.Cells["FecharHoraCreacion"].Value?.ToString(), out DateTime fecha))
                 {
-                    dateTimePicker1.Value = fechaGuardada;
-                    dateTimePicker2.Value = fechaGuardada;
+                    dateTimePicker1.Value = fecha;
+                    dateTimePicker2.Value = fecha;
                 }
             }
         }
 
-        // --- EVENTOS DE BOTONES ---
-
+        private void btnObtenerDatos_Click(object sender, EventArgs e)
+        {
+            ObtenerDatos();
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             esNuevo = true;
             LimpiarCampos();
             HabilitarCampos(true);
-            claveClas.Focus();
+            txtClave.Focus();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(IDClas.Text))
+            if (string.IsNullOrEmpty(txtIdClasificacion.Text))
             {
-                MessageBox.Show("Seleccione un registro de la tabla para editar.");
+                MessageBox.Show("Seleccione un registro para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             esNuevo = false;
             HabilitarCampos(true);
-            claveClas.Focus();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(IDClas.Text))
-            {
-                MessageBox.Show("Seleccione un registro de la tabla para eliminar.");
-                return;
-            }
-
-            DialogResult confirmacion = MessageBox.Show("¿Desea eliminar?", "Confirmar la eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (confirmacion == DialogResult.Yes)
-            {
-                using (SqlConnection con = new SqlConnection(conexionString))
-                {
-                    try
-                    {
-                        con.Open();
-                        string query = "DELETE FROM Clasificacion WHERE IdClasificacion = @Id";
-                        SqlCommand cmd = new SqlCommand(query, con);
-                        cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(IDClas.Text));
-
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Registro eliminado correctamente");
-
-                        LimpiarCampos();
-                        DeshabilitarCampos();
-                        ObtenerDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al eliminar: " + ex.Message);
-                    }
-                }
-            }
+            txtClave.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -167,9 +137,9 @@ namespace DB_Cine
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(claveClas.Text) || string.IsNullOrWhiteSpace(descripcionClas.Text))
+            if (string.IsNullOrWhiteSpace(txtClave.Text) || string.IsNullOrWhiteSpace(txtDescripcion.Text))
             {
-                MessageBox.Show("Llene los campos obligatorios (Clave y Descripción).");
+                MessageBox.Show("Por favor, llene los campos obligatorios.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -191,15 +161,15 @@ namespace DB_Cine
                     {
                         string query = "UPDATE Clasificacion SET Clave = @Clave, Descripcion = @Descripcion, FecharHoraCreacion = @FechaHora WHERE IdClasificacion = @Id";
                         cmd = new SqlCommand(query, con);
-                        cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(IDClas.Text));
+                        cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(txtIdClasificacion.Text));
                     }
 
-                    cmd.Parameters.AddWithValue("@Clave", claveClas.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Descripcion", descripcionClas.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Clave", txtClave.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text.Trim());
                     cmd.Parameters.AddWithValue("@FechaHora", fechaHoraCompleta);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Registro guardado!");
+                    MessageBox.Show("Guardado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     LimpiarCampos();
                     DeshabilitarCampos();
@@ -207,14 +177,43 @@ namespace DB_Cine
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al guardar: " + ex.Message);
+                    MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private void btnObtenerDatos_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            ObtenerDatos();
+            if (string.IsNullOrEmpty(txtIdClasificacion.Text))
+            {
+                MessageBox.Show("Seleccione un registro para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (MessageBox.Show("¿Está seguro de eliminar esta clasificación?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                using (SqlConnection con = new SqlConnection(conexionString))
+                {
+                    try
+                    {
+                        con.Open();
+                        string query = "DELETE FROM Clasificacion WHERE IdClasificacion = @Id";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(txtIdClasificacion.Text));
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LimpiarCampos();
+                        DeshabilitarCampos();
+                        ObtenerDatos();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al eliminar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
