@@ -99,8 +99,6 @@ namespace DB_Cine
             }
         }
 
-        // --- EVENTOS DE BOTONES ---
-
         private void btnObtenerDatos_Click(object sender, EventArgs e)
         {
             ObtenerDatos();
@@ -132,7 +130,7 @@ namespace DB_Cine
             DeshabilitarCampos();
         }
 
-        // --- OPERACIONES: CREATE & UPDATE (Guardar) ---
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtClave.Text) ||
